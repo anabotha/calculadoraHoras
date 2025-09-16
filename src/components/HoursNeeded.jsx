@@ -16,15 +16,28 @@ const HoursNeeded = ({ hourlyPay,priceGoal }) => {
 
      const manageTime =()=>{
           const time=calculateHours();
-          if (time ==null || time==0)return' Ingresa un numero mayor a 0';
-          if (time <=0.9) return ' Menos de 1 hora de trabajo';
-          return time +' horas de trabajo';
-     }
+          const hours = Math.floor(time); // parte entera
+          const minutes = Math.round((time - hours) * 60); // parte decimal en minutos
+
+          // if (time ==null || time==0)return' Ingresa un numero mayor a 0';
+          // if (time <=0.9) return ' Menos de 1 hora de trabajo';
+          // return time +' horas de trabajo';
+          const messages = {
+      exact: `${hours} horas`,
+      withMinutes: `${hours} horas y ${minutes} minutos`,
+    };
+
+    if (minutes === 0) {
+      return messages.exact;
+    } else {
+      return messages.withMinutes;
+    }
+  };
+
 
      return (
-
-     <div className=''>
-          {/* <h2 className='p-2'> Equivale a : </h2> */}
+     <div>
+      {/* <h2> Equivale a: </h2> */}
           <h3  className='p-2' > { manageTime() }</h3>
      </div>
      )
