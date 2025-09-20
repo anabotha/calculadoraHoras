@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import HoursNeeded from "./HoursNeeded";
 import HourlyPay from "./HourlyPay";
-import PriceGoal from "./priceGoal";
+import PriceGoal from "./PriceGoal";
+// import App from '../App.css'
 
 const CostCalculator = () => {
   const [hourlyPay, setHourlyPay] = useState(1000);

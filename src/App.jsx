@@ -4,7 +4,7 @@ import Menu from './components/Menu'
 
 const App = () => {
      return (
-     <div className=' bg-primary-subtle'>
+     <div>
      {/* <Menu></Menu> */}
      <CostCalculator></CostCalculator>
      </div>
