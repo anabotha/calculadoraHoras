@@ -1,5 +1,5 @@
 import React from "react";
-import ConvertTime from "./convertTime";
+import ConvertTime from "./ConvertTime";
 
 const HoursNeeded = React.memo(({ hourlyPay, priceGoal }) => {
   const calculateHours = () => {
